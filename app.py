@@ -23,10 +23,10 @@ if azure_openai_endpoint and azure_openai_key:
 else:
     client = openai.OpenAI(STREAMLIT_OPENAI_API_KEY)
 assistant_id = os.environ.get("STREAMLIT_ASSISTANT_ID")
-instructions = os.environ.get("RUN_INSTRUCTIONS", "")
+instructions = os.environ.get("STREAMLIT_RUN_INSTRUCTIONS", "")
 assistant_title = os.environ.get("STREAMLIT_ASSISTANT_TITLE", "Assistants API UI")
 enabled_file_upload_message = os.environ.get(
-    "ENABLED_FILE_UPLOAD_MESSAGE", "Upload a file"
+    "STREAMLIT_ENABLED_FILE_UPLOAD_MESSAGE", "Upload a file"
 )
 
 
