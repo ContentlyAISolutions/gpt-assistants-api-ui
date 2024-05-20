@@ -12,7 +12,7 @@ from typing_extensions import override
 
 azure_openai_endpoint = os.environ.get("AZURE_OPENAI_ENDPOINT")
 azure_openai_key = os.environ.get("AZURE_OPENAI_KEY")
-openai_api_key = os.environ.get("OPENAI_API_KEY")
+openai_api_key = os.environ.get("STREAMLIT_OPENAI_API_KEY")
 client = None
 if azure_openai_endpoint and azure_openai_key:
     client = openai.AzureOpenAI(
@@ -21,10 +21,10 @@ if azure_openai_endpoint and azure_openai_key:
         azure_endpoint=azure_openai_endpoint,
     )
 else:
-    client = openai.OpenAI(OPENAI_API_KEY)
-assistant_id = os.environ.get("ASSISTANT_ID")
+    client = openai.OpenAI(STREAMLIT_OPENAI_API_KEY)
+assistant_id = os.environ.get("STREAMLIT_ASSISTANT_ID")
 instructions = os.environ.get("RUN_INSTRUCTIONS", "")
-assistant_title = os.environ.get("ASSISTANT_TITLE", "Assistants API UI")
+assistant_title = os.environ.get("STREAMLIT_ASSISTANT_TITLE", "Assistants API UI")
 enabled_file_upload_message = os.environ.get(
     "ENABLED_FILE_UPLOAD_MESSAGE", "Upload a file"
 )
