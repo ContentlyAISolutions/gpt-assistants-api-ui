@@ -21,7 +21,7 @@ if azure_openai_endpoint and azure_openai_key:
         azure_endpoint=azure_openai_endpoint,
     )
 else:
-    client = openai.OpenAI(api_key=openai_api_key)
+    client = openai.OpenAI(OPENAI_API_KEY)
 assistant_id = os.environ.get("ASSISTANT_ID")
 instructions = os.environ.get("RUN_INSTRUCTIONS", "")
 assistant_title = os.environ.get("ASSISTANT_TITLE", "Assistants API UI")
